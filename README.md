@@ -1,27 +1,5 @@
-C++程序实践课程大作业
-QBeat说明文档
-一、组员信息
-xxx
-二、小组分工
-1、源代码
-源代码由三人共同编写。其中分工为
-xxx：Widget, mmath.h
-xxx：Bar, Beat, FileHandler, Sheet, SongInfo
-xxx：Explosion, FallLetter, SkinManager
-2、界面图片
-xxx同学完成了大部分图片的修改，并配上了各自风格的字母。
-xxx同学对其余部分提供图片，并进行修改。
-3、音乐谱面
-xxx和xxx同学共同编写了5首歌曲的谱面，并对歌曲本身进行了修改，使之更为适合游戏运行。
-4、监督协调
-组长xxx同学负责统一把关，协调组员完成各自部分，并最终进行测试与修改，完善整体程序。另外必须说明的是，在组员学习Qt以及具体编写各自代码时，xxx同学亦有着很大帮助。
-三、程序功能：
+A music game written with QT5. It assembles DDR (Dance Dance Revolution) in the sense that the player is required to press keys to the beat, but also encourages fancy patterns of keyboard press combinations as in Jubeat. This program shares the level definitions files with Taikojiro and has good GUI.
+
+---
+
 相对于单纯的动手游戏，我们从一开始就希望自己的作品能够更为灵活与多彩，从这个角度来看，将音乐与动手配合起来自然再好不过。因此，我们的QBeat是一个音乐游戏，伴随着音乐的节奏，一些字母会不断掉落，我们的玩家需要在合适的时间击打这些按键。这些字母出现的时间是事先设计好的（称为歌曲对应的“谱面”），而谱面的设计则根据歌曲内容或是键盘手势。这个游戏非常考验玩家的节律感与指尖操作能力，在喜爱的音乐中，伴着强有力的节律，放松精神的同时也可以提高打字水平。游戏当然需要成就感与竞技性，在游戏结束后，会根据玩家的表现给出评级，并且保存最高纪录，而玩家的得分则取决于按键时间的准确度与成功按键的次数。游戏本身自带几首歌曲及谱面作为基础，玩家亦可根据自己喜欢的歌曲，轻松地编写谱面(.alp和.alp.info文件)插入游戏，在Qbeat中每一个人既是玩家也是创作者，向你的朋友分享你的快乐吧！如果愿意，自定义一首歌曲对应的界面图片更是极好的！
-四、程序结构
-Widget类控制程序的逻辑、事件处理和图形绘制。QTimer定时触发重绘事件(fps=75)，根据现在的“场景”在paintEvent中绘图；keyPressEvent响应键盘事件。
-FileHandler类负责文件相关的操作，包括列目录、存取最高纪录、读取谱面。歌曲基本信息保存在SongInfo对象中，而谱面保存在Sheet对象中。Sheet又按小节分为若干Bar，每个小节中有若干个节拍Beat。FileHandler在适当时候载入谱面并构建这样的结构。
-SkinManager管理游戏的界面图片，在选择一首歌曲时判断是否自定义皮肤，以便Widget重绘时调用。
-FallLetter和Explosion作为界面的组件，在Widget绘制时通知它们将合适的状态绘制上去。
-五、致谢
-xxx同学也提供了部分原始界面图片，在此表示感谢。
-六、本文档由三名组员共同写作。
